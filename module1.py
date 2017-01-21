@@ -68,12 +68,6 @@ def parallel(angle,col):
         plt.plot(coordsX, coordsY ,color=col)
 
 def drawGrid(radius=1):
-    #draw circle
-    t = np.linspace(0, 2 * math.pi, 500)
-    x = radius * np.cos(t)
-    y = radius * np.sin(t)
-    plt.plot(x, y, color='k')
-
     #parallels with 5 deg spacing
     for i in np.linspace(0, math.pi, 21):
         parallel(i, '0.75')
@@ -81,3 +75,9 @@ def drawGrid(radius=1):
     #meridians with 5 deg spacing
     for i in np.linspace(0, math.pi, 21):
         meridian(i, '0.75')
+
+    #draw circle
+    t = np.linspace(0, 2 * math.pi, 500)
+    x = radius * np.cos(t)
+    y = radius * np.sin(t)
+    plt.plot(x, y, color='k')
